@@ -42,7 +42,7 @@ public class GBCETest {
 		populateStocks(gbceMarket);
 		
 		// launch trade generator
-		GBCENasdaTester  nasda = new GBCENasdaTester(10,5,gbceMarket);// every 10 seconds for 20 minutes
+		GBCENasdaTester  nasda = new GBCENasdaTester(10,20,gbceMarket);// every 10 seconds for 20 minutes
 		
 	}
 
@@ -78,11 +78,11 @@ public class GBCETest {
 		try {
 			
 			int count=1;
-			while(count<2){
-				Thread.sleep(MILLISECONDS.convert(3, MINUTES));				
-				System.out.println("***********  "+(count++)+"° MARKET PRICE  **************");
+			while(count<4){
+				Thread.sleep(MILLISECONDS.convert(5, MINUTES));				
+				System.out.println("***********  "+(count++)+"Â° MARKET PRICE  **************");
 				for(SingleStock stock: gbceMarket.getStocks()){
-					System.out.println("Stock: "+stock.getStockSymbol()+" Price : "+ df.format(gbceMarket.calculateStockPrice(stock))+" £");
+					System.out.println("Stock: "+stock.getStockSymbol()+" Price : "+ df.format(gbceMarket.calculateStockPrice(stock))+" Â£");
 				}
 				 // calculate price every 5 minutes
 				
