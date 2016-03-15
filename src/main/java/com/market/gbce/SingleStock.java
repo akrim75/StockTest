@@ -69,7 +69,7 @@ public class SingleStock {
 		if(this.getType() != null){
 			if (tickerTrade.getTickerPrice() != 0) {
 				switch (getType()) {
-				case PREFFERED: {
+				case PREFERRED: {
 					dividend = (getFixedDividend() * getParValue())
 							/ tickerTrade.getTickerPrice();
 					break;
@@ -180,12 +180,12 @@ public class SingleStock {
 	
 	
 	enum StockType {
-		PREFFERED, COMMON;
+		PREFERRED, COMMON;
 		
 		static StockType getType(String type) {
     		// TODO Auto-generated method stub
     	    if(PREFFERED.toString().equalsIgnoreCase(type)){
-    	    	return PREFFERED;
+    	    	return PREFERRED;
     	    } else if(COMMON.toString().equalsIgnoreCase(type)){
     	    	return COMMON;
     	    } else {
